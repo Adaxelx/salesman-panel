@@ -1,12 +1,16 @@
+import 'styles/index.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+import Root from './features/Root';
+import { worker } from './mocks/browser';
 import reportWebVitals from './reportWebVitals';
+worker.start();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>,
   document.getElementById('root')
 );
