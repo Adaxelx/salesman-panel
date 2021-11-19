@@ -15,7 +15,8 @@ export const GlobalStyle = createGlobalStyle`${css`
     --colors-primary: #067bc2;
     --colors-seconday: #84bcda;
     --colors-tertiary: #ecc30b;
-    --colors-text: #1a090d;
+    --colors-text-base: #1a090d;
+    --colors-text-reverse: #fcfcfc;
     --colors-background: #fcfcfc;
   }
 
@@ -23,7 +24,8 @@ export const GlobalStyle = createGlobalStyle`${css`
     --colors-primary: #b62b5b;
     --colors-seconday: #023c8d;
     --colors-tertiary: #772c67;
-    --colors-text: #fcfcfc;
+    --colors-text-base: #fcfcfc;
+    --colors-text-reverse: #1a090d;
     --colors-background: #1a090d;
   }
 `}`;

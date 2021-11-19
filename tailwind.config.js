@@ -6,7 +6,7 @@ module.exports = {
       primary: 'var(--colors-primary)',
       secondary: 'var(--colors-secondary)',
       tertiary: 'var(--colors-tertiary)',
-      text: 'var(--colors-text)',
+      text: { base: 'var(--colors-text-base)', reverse: 'var(--colors-text-reverse)' },
       background: 'var(--colors-background)',
       success: 'var(--colors-success)',
       error: 'var(--colors-error)',
