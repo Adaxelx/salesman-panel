@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import dayjs from 'dayjs';
 
 import { login } from 'api/login';
+import { GlobalStyle } from 'styles/GlobalStyles';
 import messages, { flattenMessages } from 'translations';
 
 const locale = 'pl-PL';
@@ -39,6 +40,7 @@ function Root() {
   return (
     <IntlProvider locale={locale} messages={flattenMessages(messages[locale])}>
       <QueryClientProvider client={queryClient}>
+        <GlobalStyle />
         <div>
           <h1 className="text-primary">Test</h1>
           <div>{message && <FormattedMessage id={message} />}</div>
