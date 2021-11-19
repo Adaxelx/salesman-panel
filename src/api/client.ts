@@ -1,7 +1,7 @@
-const localStorageKey = '__bearer_token__';
+import { tokenKey, userKey } from 'constants/localStorageKeys';
 
 export function client(endpoint: string, { body, ...customConfig }: any = {}) {
-  const token = window.localStorage.getItem(localStorageKey);
+  const token = window.localStorage.getItem(tokenKey);
   const headers: any = { 'content-type': 'application/json' };
   if (token) {
     headers.Authorization = `Bearer ${token}`;
@@ -37,5 +37,6 @@ export function client(endpoint: string, { body, ...customConfig }: any = {}) {
 }
 
 function logout() {
-  window.localStorage.removeItem(localStorageKey);
+  window.localStorage.removeItem(tokenKey);
+  window.localStorage.removeItem(userKey);
 }

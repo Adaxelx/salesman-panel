@@ -11,6 +11,11 @@ export const handlers = [
       return res(
         ctx.status(200),
         ctx.json({
+          token: '123',
+          user: {
+            firstName: 'Jan',
+            lastName: 'Kowalski',
+          },
           message: 'login.success',
         })
       );
