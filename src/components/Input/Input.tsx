@@ -6,9 +6,10 @@ interface InputProps {
   type?: 'text' | 'password';
   className?: string;
   label?: string;
+  htmlFor?: string;
 }
 
-const Input = ({ onChange, className, label, ...rest }: InputProps) => {
+const Input = ({ onChange, className, label, htmlFor, ...rest }: InputProps) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     onChange(value);
@@ -16,7 +17,7 @@ const Input = ({ onChange, className, label, ...rest }: InputProps) => {
   return (
     <div className="flex flex-col items-start">
       {label && (
-        <label htmlFor={label} className="text-2xl text-text-base">
+        <label htmlFor={htmlFor || label} className="text-2xl text-text-base font-medium">
           {label}
         </label>
       )}

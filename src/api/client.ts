@@ -28,6 +28,7 @@ export function client(endpoint: string, { body, ...customConfig }: any = {}) {
         return;
       }
       if (response.ok) {
+        console.log(response);
         return await response.json();
       } else {
         const errorMessage = await response.text();

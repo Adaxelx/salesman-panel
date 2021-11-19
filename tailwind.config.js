@@ -13,6 +13,9 @@ module.exports = {
       warning: 'var(--colors-warning)',
       info: 'var(--colors-info)',
     },
+    minWidth: {
+      uiElement: '180px;',
+    },
   },
   variants: {
     extend: {},

@@ -8,12 +8,11 @@ export const GlobalStyle = createGlobalStyle`${css`
     --colors-warning: #fff3cd;
     --colors-info: #d1ecf1;
     font-family: Sora;
-    font-weight: 500;
   }
 
   body[data-theme='light'] {
     --colors-primary: #067bc2;
-    --colors-seconday: #84bcda;
+    --colors-secondary: #84bcda;
     --colors-tertiary: #ecc30b;
     --colors-text-base: #1a090d;
     --colors-text-reverse: #fcfcfc;
@@ -22,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`${css`
 
   body[data-theme='dark'] {
     --colors-primary: #b62b5b;
-    --colors-seconday: #023c8d;
+    --colors-secondary: #023c8d;
     --colors-tertiary: #772c67;
     --colors-text-base: #fcfcfc;
     --colors-text-reverse: #1a090d;
