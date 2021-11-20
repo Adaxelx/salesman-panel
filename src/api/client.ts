@@ -1,4 +1,4 @@
-import { tokenKey, userKey } from 'constants/localStorageKeys';
+import { tokenKey } from 'constants/localStorageKeys';
 
 export function client(endpoint: string, { body, ...customConfig }: any = {}) {
   const token = window.localStorage.getItem(tokenKey);
@@ -22,22 +22,11 @@ export function client(endpoint: string, { body, ...customConfig }: any = {}) {
   return window
     .fetch(`${process.env.REACT_APP_API_URL}/${endpoint}`, config)
     .then(async response => {
-      if (response.status === 401) {
-        logout();
-        window.location.assign(window.location as unknown as URL);
-        return;
-      }
       if (response.ok) {
-        console.log(response);
         return await response.json();
       } else {
         const errorMessage = await response.text();
-        return Promise.reject(new Error(errorMessage));
+        throw new Error(errorMessage);
       }
     });
-}
-
-function logout() {
-  window.localStorage.removeItem(tokenKey);
-  window.localStorage.removeItem(userKey);
 }

@@ -6,16 +6,10 @@ import { CustomersOpinions, Dashboard, OrderCategories, SalesmanPanel, SalesQual
 
 const Router = () => {
   const {
-    state: { token },
+    state: { token, user },
   } = useUser();
 
-  //   useEffect(() => {
-  //     if (token) {
-  //       history.push('/salesman-panel');
-  //     }
-  //   }, [ token]);
-
-  return token ? (
+  return token && user ? (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SalesmanPanel />} />

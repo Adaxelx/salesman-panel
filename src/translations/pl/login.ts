@@ -1,5 +1,5 @@
 export default {
-  title: 'Zaloguj się do panelu sprzedawcy',
+  title: 'Panel sprzedawcy',
   login: 'Login',
   password: 'Hasło',
   success: 'Pomyślnie zalogowano.',
