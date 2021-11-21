@@ -7,7 +7,8 @@ export const GlobalStyle = createGlobalStyle`${css`
     --colors-error: 248, 215, 218;
     --colors-warning: 255, 243, 205;
     --colors-info: 209, 236, 241;
-    --colors-white: 252, 252, 252;
+    --colors-white: #fcfcfc;
+    --colors-grays-4: #c4c4c4;
     font-family: Sora;
   }
 

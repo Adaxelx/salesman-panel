@@ -24,6 +24,9 @@ module.exports = {
       info: colorInfo => colorWithOpacity(colorInfo, 'info'),
       base: {
         white: 'var(--colors-white)',
+        grays: {
+          4: 'var(--colors-grays-4)',
+        },
       },
     },
     minWidth: {

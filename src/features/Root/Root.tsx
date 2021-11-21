@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 
 import { GlobalStyle } from 'styles/GlobalStyles';
 import Router from 'features/Router';
+import Topbar from 'features/Topbar';
 import messages, { flattenMessages } from 'translations';
 
 const locale = 'pl-PL';
@@ -32,6 +33,7 @@ function Root() {
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <GlobalStyle />
+          <Topbar />
           <Router />
         </UserProvider>
       </QueryClientProvider>
