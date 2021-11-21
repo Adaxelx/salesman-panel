@@ -4,4 +4,5 @@ export default {
   password: 'Hasło',
   success: 'Pomyślnie zalogowano.',
   submitButton: 'Zaloguj',
+  wrongCredentials: 'Niepoprawne dane logowania.',
 };

@@ -1,3 +1,13 @@
+const colorWithOpacity = ({ opacityVariable, opacityValue }, colorName) => {
+  if (opacityValue !== undefined) {
+    return `rgba(var(--colors-${colorName}), ${opacityValue})`;
+  }
+  if (opacityVariable !== undefined) {
+    return `rgba(var(--colors-${colorName}), var(${opacityVariable}, 1))`;
+  }
+  return `rgb(var(--colors-${colorName}))`;
+};
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
@@ -8,10 +18,13 @@ module.exports = {
       tertiary: 'var(--colors-tertiary)',
       text: { base: 'var(--colors-text-base)', reverse: 'var(--colors-text-reverse)' },
       background: 'var(--colors-background)',
-      success: 'var(--colors-success)',
-      error: 'var(--colors-error)',
-      warning: 'var(--colors-warning)',
-      info: 'var(--colors-info)',
+      success: colorInfo => colorWithOpacity(colorInfo, 'success'),
+      error: colorInfo => colorWithOpacity(colorInfo, 'error'),
+      warning: colorInfo => colorWithOpacity(colorInfo, 'warning'),
+      info: colorInfo => colorWithOpacity(colorInfo, 'info'),
+      base: {
+        white: 'var(--colors-white)',
+      },
     },
     minWidth: {
       uiElement: '180px;',

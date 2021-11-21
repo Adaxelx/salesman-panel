@@ -20,11 +20,6 @@ export const handlers = [
         })
       );
     }
-    return res(
-      ctx.status(401),
-      ctx.json({
-        message: 'login.wrongCredentials',
-      })
-    );
+    return res(ctx.status(401), ctx.text('login.wrongCredentials'));
   }),
 ];
