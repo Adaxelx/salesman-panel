@@ -1,7 +1,9 @@
+import en from './en';
 import pl from './pl';
 
 export default {
   'pl-PL': pl,
+  'en-EN': en,
 };
 
 // https://github.com/yahoo/react-intl/wiki/Upgrade-Guide#flatten-messages-object
