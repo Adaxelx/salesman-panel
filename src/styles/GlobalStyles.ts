@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`${css`
   body {
     --colors-white: #fcfcfc;
     --colors-grays-4: #c4c4c4;
+    --colors-red: #e74c3c;
     font-family: Sora;
   }
 

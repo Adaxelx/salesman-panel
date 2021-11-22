@@ -5,8 +5,8 @@ import { UserProvider } from 'context/UserContext';
 import dayjs from 'dayjs';
 
 import { GlobalStyle } from 'styles/GlobalStyles';
+import Navigation from 'features/Navigation';
 import Router from 'features/Router';
-import Topbar from 'features/Topbar';
 import { ToastContainer } from 'components';
 import messages, { flattenMessages } from 'translations';
 
@@ -30,7 +30,7 @@ function Root() {
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <GlobalStyle />
-          <Topbar />
+          <Navigation />
           <Router />
           <ToastContainer />
         </UserProvider>
