@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Switch } from 'components';
+import ThemeSwitcher from 'features/ThemeSwitcher';
 
 const Topbar = () => {
-  const [on, setOn] = useState(false);
-  const toggle = () => setOn(prevOn => !prevOn);
   return (
     <div className="h-16 bg-tertiary flex justify-between items-center fixed w-full">
-      <Switch on={on} toggle={toggle} />
+      <ThemeSwitcher />
     </div>
   );
 };

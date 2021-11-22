@@ -24,10 +24,6 @@ const queryClient = new QueryClient({
 });
 
 function Root() {
-  document.body.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
-
   return (
     <IntlProvider locale={locale} messages={flattenMessages(messages[locale])}>
       <QueryClientProvider client={queryClient}>

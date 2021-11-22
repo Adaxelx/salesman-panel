@@ -11,7 +11,7 @@ interface ButtonProps {
 const Button = ({ variant = 'primary', type = 'button', ...rest }: ButtonProps) => {
   return (
     <button
-      className={`bg-${variant} min-w-uiElement rounded-full h-12 text-text-base px-4`}
+      className={`bg-${variant} min-w-uiElement rounded-full h-12 text-base-white px-4`}
       type={type}
       {...rest}
     />

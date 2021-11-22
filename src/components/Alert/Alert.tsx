@@ -7,7 +7,7 @@ interface AlertProps {
 }
 
 const Alert = ({ children, type = 'error' }: AlertProps) => {
-  return <ReachAlert className={`bg-${type}   p-2 rounded mb-4`}>{children}</ReachAlert>;
+  return <ReachAlert className={`bg-${type} p-2 rounded mb-4`}>{children}</ReachAlert>;
 };
 
 export default Alert;
