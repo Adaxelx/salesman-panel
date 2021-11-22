@@ -3,10 +3,6 @@ import { createGlobalStyle, css } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`${css`
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;800&display=swap');
   body {
-    --colors-success: #d4edda;
-    --colors-error: #f8d7da;
-    --colors-warning: #fff3cd;
-    --colors-info: #d1ecf1;
     --colors-white: #fcfcfc;
     --colors-grays-4: #c4c4c4;
     font-family: Sora;

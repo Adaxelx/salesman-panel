@@ -7,7 +7,8 @@ import { login as loginCall } from 'api/login';
 import { ErrorType } from 'types';
 import { User, UserCredentials } from 'types/user';
 import { flexCenterAll } from 'styles/classes';
-import { Alert, Button, Input, Title } from 'components';
+import { Button, Input, Title } from 'components';
+import { showToast } from 'components/ToastContainer';
 
 const classWrapper = 'w-full sm:w-2/3 md:w-1/2 lg:w-1/2 2xl:w-1/3 relative';
 
@@ -19,16 +20,17 @@ const Dashboard = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const { dispatch } = useUser();
-  const {
-    mutate: loginMutation,
-    error,
-    isError,
-  } = useMutation<{ token: string; user: User }, ErrorType, UserCredentials, unknown>(
-    (credentials: UserCredentials) => loginCall(credentials),
-    {
-      onSuccess: ({ token, user }) => dispatch({ type: 'login', payload: { token, user } }),
-    }
-  );
+  const { mutate: loginMutation } = useMutation<
+    { token: string; user: User },
+    ErrorType,
+    UserCredentials,
+    unknown
+  >((credentials: UserCredentials) => loginCall(credentials), {
+    onSuccess: ({ token, user }) => dispatch({ type: 'login', payload: { token, user } }),
+    onError: error => {
+      showToast(intl.formatMessage({ id: error?.message }), { type: 'error' });
+    },
+  });
   const intl = useIntl();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -37,7 +39,7 @@ const Dashboard = () => {
   };
 
   return (
-    <main className={`w-full h-screen bg-background ${flexCenterAll} p-2`}>
+    <main className={`w-full h-screen bg-background ${flexCenterAll} p-2 pt-16`}>
       <div className={`${classWrapper} mb-4`}>
         <div className={`${background} w-5/12  bg-tertiary  -translate-y-2`}></div>
         <Title className="mb-4 relative">{intl.formatMessage({ id: 'login.title' })}</Title>
@@ -61,7 +63,7 @@ const Dashboard = () => {
             htmlFor="password"
             label={intl.formatMessage({ id: 'login.password' })}
           />
-          {isError && <Alert type="error">{intl.formatMessage({ id: error?.message })}</Alert>}
+
           <Button type="submit">{intl.formatMessage({ id: 'login.submitButton' })}</Button>
         </form>
       </div>

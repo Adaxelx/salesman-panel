@@ -18,10 +18,6 @@ module.exports = {
       tertiary: 'var(--colors-tertiary)',
       text: { base: 'var(--colors-text-base)', reverse: 'var(--colors-text-reverse)' },
       background: 'var(--colors-background)',
-      success: 'var(--colors-success)',
-      error: 'var(--colors-error)',
-      warning: 'var(--colors-warning)',
-      info: 'var(--colors-info)',
       base: {
         white: 'var(--colors-white)',
         grays: {
