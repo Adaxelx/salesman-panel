@@ -6,7 +6,6 @@ export const GlobalStyle = createGlobalStyle`${css`
     --colors-white: #fcfcfc;
     --colors-grays-4: #c4c4c4;
     --colors-red: #e74c3c;
-    font-family: Sora;
   }
 
   body[data-theme='light'] {

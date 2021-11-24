@@ -1,6 +1,6 @@
 import React from 'react';
 
-const bar = 'h-1 w-12 bg-text-base absolute transition';
+const bar = 'h-1 w-12 bg-text-base absolute transition  rounded-full';
 
 const topBarOpen = 'transform rotate-45 translate-y-2.5';
 const midBarOpen = 'opacity-0';

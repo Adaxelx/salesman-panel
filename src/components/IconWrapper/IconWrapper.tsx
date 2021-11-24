@@ -5,6 +5,7 @@ type IconSize = 'regular' | 'small' | 'big';
 interface IconWrapperProps {
   size?: IconSize;
   children: ReactNode;
+  className?: string;
 }
 
 const pickSize = (size: IconSize) => {
@@ -18,8 +19,8 @@ const pickSize = (size: IconSize) => {
   }
 };
 
-const IconWrapper = ({ size = 'regular', children }: IconWrapperProps) => {
-  return <div className={`${pickSize(size)} text-text-base`}>{children}</div>;
+const IconWrapper = ({ size = 'regular', children, className = '' }: IconWrapperProps) => {
+  return <div className={`${pickSize(size)} text-text-base ${className}`}>{children}</div>;
 };
 
 export default IconWrapper;
