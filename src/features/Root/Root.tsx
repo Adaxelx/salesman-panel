@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from 'context/UserContext';
 import dayjs from 'dayjs';
 
@@ -45,10 +46,12 @@ function Root() {
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <GlobalStyle />
-          <MainContainer>
-            <Navigation toggleLanguage={toggleLanguage} language={language} />
-            <Router />
-          </MainContainer>
+          <BrowserRouter>
+            <MainContainer>
+              <Navigation toggleLanguage={toggleLanguage} language={language} />
+              <Router />
+            </MainContainer>
+          </BrowserRouter>
           <ToastContainer />
         </UserProvider>
       </QueryClientProvider>

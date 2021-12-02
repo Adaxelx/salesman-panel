@@ -10,8 +10,8 @@ export const GlobalStyle = createGlobalStyle`${css`
 
   body[data-theme='light'] {
     --colors-primary: #067bc2;
-    --colors-secondary: #84bcda;
-    --colors-tertiary: #ecc30b;
+    --colors-secondary: #ecc30b;
+    --colors-tertiary: #84bcda;
     --colors-text-base: #1a090d;
     --colors-text-reverse: #fcfcfc;
     --colors-background: #fcfcfc;
