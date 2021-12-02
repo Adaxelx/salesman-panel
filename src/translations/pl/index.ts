@@ -1,3 +1,4 @@
 import login from './login';
+import navigation from './navigation';
 
-export default { login };
+export default { login, navigation };

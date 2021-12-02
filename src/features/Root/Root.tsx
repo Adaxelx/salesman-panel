@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from 'context/UserContext';
 import dayjs from 'dayjs';
 
+import { LanguageType } from 'types';
 import { GlobalStyle } from 'styles/GlobalStyles';
+import Navigation from 'features/Navigation';
 import Router from 'features/Router';
+import MainContainer from 'containers/MainContainer';
+import { ToastContainer } from 'components';
 import messages, { flattenMessages } from 'translations';
-
-const locale = 'pl-PL';
-dayjs.locale('pl');
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,17 +24,35 @@ const queryClient = new QueryClient({
   },
 });
 
+const languageDefault: LanguageType =
+  ((window.navigator.languages?.find(
+    language => language === 'pl-PL' || language === 'en-EN'
+  ) as LanguageType) ||
+    undefined) ??
+  'pl-PL';
+
 function Root() {
-  document.body.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
+  const [language, setLanguage] = useState<LanguageType>(languageDefault);
+
+  const toggleLanguage = () =>
+    setLanguage(prevLanguage => (prevLanguage === 'pl-PL' ? 'en-EN' : 'pl-PL'));
+
+  useEffect(() => {
+    dayjs.locale(language);
+  }, [language]);
 
   return (
-    <IntlProvider locale={locale} messages={flattenMessages(messages[locale])}>
+    <IntlProvider locale={language} messages={flattenMessages(messages[language])}>
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <GlobalStyle />
-          <Router />
+          <BrowserRouter>
+            <MainContainer>
+              <Navigation toggleLanguage={toggleLanguage} language={language} />
+              <Router />
+            </MainContainer>
+          </BrowserRouter>
+          <ToastContainer />
         </UserProvider>
       </QueryClientProvider>
     </IntlProvider>

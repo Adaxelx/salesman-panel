@@ -11,9 +11,9 @@ interface UserProviderProps {
   children: ReactNode;
 }
 
-const UserStateContext = React.createContext<{ state: State; dispatch: Dispatch } | undefined>(
-  undefined
-);
+const UserStateContext = React.createContext<
+  { state: State; dispatch: Dispatch; isLoggedIn: boolean } | undefined
+>(undefined);
 
 const user = window.localStorage.getItem(userKey);
 const initialState: State = {
@@ -36,7 +36,8 @@ function userReducer(state: State, action: Action) {
 
 function UserProvider({ children }: UserProviderProps) {
   const [state, dispatch] = useReducer(userReducer, initialState);
-  const value = { state, dispatch };
+  const { token, user } = state;
+  const value = { state, dispatch, isLoggedIn: Boolean(token && user) };
   return <UserStateContext.Provider value={value}>{children}</UserStateContext.Provider>;
 }
 

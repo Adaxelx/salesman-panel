@@ -3,21 +3,18 @@ import { createGlobalStyle, css } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`${css`
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;800&display=swap');
   body {
-    --colors-success: 212, 237, 218;
-    --colors-error: 248, 215, 218;
-    --colors-warning: 255, 243, 205;
-    --colors-info: 209, 236, 241;
-    --colors-white: 252, 252, 252;
-    font-family: Sora;
+    --colors-white: #fcfcfc;
+    --colors-grays-4: #c4c4c4;
+    --colors-red: #e74c3c;
   }
 
   body[data-theme='light'] {
-    --colors-primary: 6, 123, 194;
-    --colors-secondary: 132, 188, 218;
-    --colors-tertiary: 236, 195, 11;
-    --colors-text-base: 26, 9, 13;
-    --colors-text-reverse: 252, 252, 252;
-    --colors-background: 252, 252, 252;
+    --colors-primary: #067bc2;
+    --colors-secondary: #ecc30b;
+    --colors-tertiary: #84bcda;
+    --colors-text-base: #1a090d;
+    --colors-text-reverse: #fcfcfc;
+    --colors-background: #fcfcfc;
   }
 
   body[data-theme='dark'] {

@@ -1,45 +1,40 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useUser } from 'context/UserContext';
 
+import { RoutesLinks } from 'types/router';
 import { CustomersOpinions, Dashboard, OrderCategories, SalesmanPanel, SalesQuality } from 'views';
 
 const Router = () => {
-  const {
-    state: { token, user },
-  } = useUser();
+  const { isLoggedIn } = useUser();
 
-  return token && user ? (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SalesmanPanel />} />
-        <Route path="/customers-options" element={<CustomersOpinions />} />
-        <Route path="/order-categories" element={<OrderCategories />} />
-        <Route path="/sales-quality" element={<SalesQuality />} />
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: '1rem' }}>
-              <p>There's nothing here!</p>
-            </main>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+  return isLoggedIn ? (
+    <Routes>
+      <Route path={RoutesLinks.Dashboard} element={<SalesmanPanel />} />
+      <Route path={RoutesLinks.CustomerOpinions} element={<CustomersOpinions />} />
+      <Route path={RoutesLinks.OrderCategories} element={<OrderCategories />} />
+      <Route path={RoutesLinks.SalesQuantity} element={<SalesQuality />} />
+      <Route
+        path="*"
+        element={
+          <main style={{ padding: '1rem' }}>
+            <p>There's nothing here!</p>
+          </main>
+        }
+      />
+    </Routes>
   ) : (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: '1rem' }}>
-              <p>There's nothing here!</p>
-            </main>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Dashboard />} />
+      <Route
+        path="*"
+        element={
+          <main style={{ padding: '1rem' }}>
+            <p>There's nothing here!</p>
+          </main>
+        }
+      />
+    </Routes>
   );
 };
 
