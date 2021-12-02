@@ -8,6 +8,7 @@ import { LanguageType } from 'types';
 import { GlobalStyle } from 'styles/GlobalStyles';
 import Navigation from 'features/Navigation';
 import Router from 'features/Router';
+import MainContainer from 'containers/MainContainer';
 import { ToastContainer } from 'components';
 import messages, { flattenMessages } from 'translations';
 
@@ -44,8 +45,10 @@ function Root() {
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <GlobalStyle />
-          <Navigation toggleLanguage={toggleLanguage} language={language} />
-          <Router />
+          <MainContainer>
+            <Navigation toggleLanguage={toggleLanguage} language={language} />
+            <Router />
+          </MainContainer>
           <ToastContainer />
         </UserProvider>
       </QueryClientProvider>

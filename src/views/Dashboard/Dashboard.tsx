@@ -39,7 +39,7 @@ const Dashboard = () => {
   };
 
   return (
-    <main className={`w-full h-screen bg-background ${flexCenterAll} p-2 pt-16`}>
+    <div className={`${flexCenterAll} w-100 h-screen`}>
       <div className={`${classWrapper} mb-4`}>
         <div className={`${background} w-5/12  bg-tertiary  -translate-y-2`}></div>
         <Title className="mb-4 relative">{intl.formatMessage({ id: 'login.title' })}</Title>
@@ -67,7 +67,7 @@ const Dashboard = () => {
           <Button type="submit">{intl.formatMessage({ id: 'login.submitButton' })}</Button>
         </form>
       </div>
-    </main>
+    </div>
   );
 };
 

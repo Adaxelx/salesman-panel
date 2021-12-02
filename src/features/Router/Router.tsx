@@ -5,11 +5,9 @@ import { useUser } from 'context/UserContext';
 import { CustomersOpinions, Dashboard, OrderCategories, SalesmanPanel, SalesQuality } from 'views';
 
 const Router = () => {
-  const {
-    state: { token, user },
-  } = useUser();
+  const { isLoggedIn } = useUser();
 
-  return token && user ? (
+  return isLoggedIn ? (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SalesmanPanel />} />
