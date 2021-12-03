@@ -29,7 +29,6 @@ const navLinks = [
     children: <FormattedMessage id="navigation.orderCategories" />,
     to: RoutesLinks.OrderCategories,
   },
-
   { children: <FormattedMessage id="navigation.salesQuantity" />, to: RoutesLinks.SalesQuantity },
 ];
 
@@ -84,7 +83,13 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
           )}
 
           {isLoggedIn && (
-            <Button onClick={() => dispatch({ type: 'logout' })} variant="secondary">
+            <Button
+              onClick={() => {
+                dispatch({ type: 'logout' });
+                setIsOpen(false);
+              }}
+              variant="secondary"
+            >
               Wyloguj
             </Button>
           )}
