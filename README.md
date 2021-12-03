@@ -2,7 +2,7 @@
 
 Project made for GUI design classes.
 
-# How to start the app
+## How to start the app
 
 1. Install node on your computer (I developed on v14.15.5)
 2. Clone repository (via ssh or http)
@@ -12,60 +12,60 @@ Project made for GUI design classes.
 
 After that steps app should start
 
-# Project structure
+## Project structure
 
-## api
+### api
 
 fetch wrapper and api queries
 
-## assets
+### assets
 
 all images etc.
 
-## components
+### components
 
 reusable components, used across app
 
-## constants
+### constants
 
 global constants, used across app
 
-## containers
+### containers
 
 wrappers used across app
 
-## context
+### context
 
 all contexts in app
 
-## features
+### features
 
 components with some bigger logic, usually composed from many smaller components
 
-## helpers 
+### helpers 
 
 helper functions, used across app
 
-## hooks
+### hooks
 
 all custom hooks
 
-## mocks 
+### mocks 
 
 msw mock handlers used as backend in our project
 
-## styles 
+### styles 
 
 global styles, reusable classes
 
-## translations
+### translations
 
 translations for our app (current polish and english)
 
-## types 
+### types 
 
 types shared across app
 
-## views
+### views
 
 all views in our app
