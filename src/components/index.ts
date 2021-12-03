@@ -7,3 +7,4 @@ export { default as IconWrapper } from './IconWrapper';
 export { default as HamburgerButton } from './HamburgerButton';
 export { default as LanguageSwitch } from './LanguageSwitch';
 export { default as Select, SelectOption } from './Select';
+export { default as Widget } from './Widget';

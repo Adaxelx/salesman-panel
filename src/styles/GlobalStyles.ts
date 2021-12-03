@@ -6,13 +6,14 @@ export const GlobalStyle = createGlobalStyle`${css`
     --colors-white: #fcfcfc;
     --colors-grays-4: #c4c4c4;
     --colors-red: #e74c3c;
+    color: var(--colors-text-base);
   }
 
   body[data-theme='light'] {
     --colors-primary: #067bc2;
     --colors-secondary: #ecc30b;
     --colors-tertiary: #84bcda;
-    --colors-text-base: #1a090d;
+    --colors-text-base: black;
     --colors-text-reverse: #fcfcfc;
     --colors-background: #fcfcfc;
   }
@@ -22,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`${css`
     --colors-secondary: #023c8d;
     --colors-tertiary: #772c67;
     --colors-text-base: #fcfcfc;
-    --colors-text-reverse: #1a090d;
-    --colors-background: #1a090d;
+    --colors-text-reverse: black;
+    --colors-background: black;
   }
 `}`;
