@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Salesman panel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project made for GUI design classes.
 
-## Available Scripts
+## How to start the app
 
-In the project directory, you can run:
+1. Install node on your computer (I developed on v14.15.5)
+2. Clone repository (via ssh or http)
+3. Run: cd salesman-panel
+4. Run: npm install
+5. Run: npm start
 
-### `npm start`
+After that steps app should start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### api
 
-### `npm test`
+fetch wrapper and api queries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### assets
 
-### `npm run build`
+all images etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+reusable components, used across app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### constants
 
-### `npm run eject`
+global constants, used across app
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### containers
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+wrappers used across app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### context
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+all contexts in app
 
-## Learn More
+### features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+components with some bigger logic, usually composed from many smaller components
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### helpers 
+
+helper functions, used across app
+
+### hooks
+
+all custom hooks
+
+### mocks 
+
+msw mock handlers used as backend in our project
+
+### styles 
+
+global styles, reusable classes
+
+### translations
+
+translations for our app (current polish and english)
+
+### types 
+
+types shared across app
+
+### views
+
+all views in our app
