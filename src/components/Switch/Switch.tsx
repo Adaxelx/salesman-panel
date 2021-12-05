@@ -6,8 +6,8 @@ interface SwitchProps {
   className?: string;
 }
 
-const offStyle = 'transform translate-x-12';
-const onStyle = 'transform translate-x-0';
+const onStyle = 'transform translate-x-12';
+const offStyle = 'transform translate-x-0';
 
 const Switch = ({ toggle, on, className = '' }: SwitchProps) => {
   return (

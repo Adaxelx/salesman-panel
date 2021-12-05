@@ -16,9 +16,10 @@ const background = 'h-full absolute transform';
 
 const backgroundBox = `w-7/12 ${background}`;
 
-const Dashboard = () => {
+const LoginPage = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+
   const { dispatch } = useUser();
   const { mutate: loginMutation } = useMutation<
     { token: string; user: User },
@@ -31,6 +32,7 @@ const Dashboard = () => {
       showToast(intl.formatMessage({ id: error?.message }), { type: 'error' });
     },
   });
+
   const intl = useIntl();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -71,4 +73,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default LoginPage;

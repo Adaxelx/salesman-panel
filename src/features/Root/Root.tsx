@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { GlobalStyle } from 'styles/GlobalStyles';
 import Navigation from 'features/Navigation';
 import Router from 'features/Router';
 import MainContainer from 'containers/MainContainer';
-import { ToastContainer } from 'components';
+import { Loader, ToastContainer } from 'components';
 import messages, { flattenMessages } from 'translations';
 
 const queryClient = new QueryClient({
@@ -46,12 +46,16 @@ function Root() {
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <GlobalStyle />
+
           <BrowserRouter>
             <MainContainer>
-              <Navigation toggleLanguage={toggleLanguage} language={language} />
-              <Router />
+              <Suspense fallback={<Loader />}>
+                <Navigation toggleLanguage={toggleLanguage} language={language} />
+                <Router />
+              </Suspense>
             </MainContainer>
           </BrowserRouter>
+
           <ToastContainer />
         </UserProvider>
       </QueryClientProvider>
