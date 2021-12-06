@@ -5,4 +5,5 @@ export default {
   actions: {
     showMore: 'Show more',
   },
+  title: 'Hello {firstName}!',
 };

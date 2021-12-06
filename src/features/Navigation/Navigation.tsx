@@ -66,6 +66,7 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
               {navLinks.map(props => (
                 <NavLink
                   {...props}
+                  onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
                     `text-2xl uppercase font-extrabold mb-3 ${
                       isActive ? 'text-primary' : 'text-text-base'

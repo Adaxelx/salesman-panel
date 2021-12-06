@@ -1,7 +1,11 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
+
+import { Page } from 'containers';
 
 const OrderCategories = () => {
-  return <></>;
+  const intl = useIntl();
+  return <Page title={intl.formatMessage({ id: 'pageTitles.orderCategories' })} />;
 };
 
 export default OrderCategories;
