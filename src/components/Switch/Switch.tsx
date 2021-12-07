@@ -11,7 +11,7 @@ const offStyle = 'transform translate-x-0';
 
 const Switch = ({ toggle, on, className = '' }: SwitchProps) => {
   return (
-    <div
+    <button
       className={`w-24 h-12 bg-base-white rounded-full flex items-center px-1 ${className}`}
       onClick={toggle}
     >
@@ -20,7 +20,7 @@ const Switch = ({ toggle, on, className = '' }: SwitchProps) => {
           on ? onStyle : offStyle
         }`}
       ></div>
-    </div>
+    </button>
   );
 };
 

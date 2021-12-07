@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { NavLink } from 'react-router-dom';
 import Portal from '@reach/portal';
 import { useUser } from 'context/UserContext';
@@ -36,6 +36,7 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [shop, setShop] = useState('shop1');
   const { isLoggedIn, dispatch } = useUser();
+  const intl = useIntl();
   return (
     <>
       <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(prevIsOpen => !prevIsOpen)} />
@@ -91,7 +92,7 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
               }}
               variant="secondary"
             >
-              Wyloguj
+              {intl.formatMessage({ id: 'navigation.logout' })}
             </Button>
           )}
         </div>

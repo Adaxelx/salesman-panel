@@ -4,4 +4,5 @@ export default {
   orderCategories: 'Zamówienia',
   salesQuantity: 'Jakość sprzedaży',
   notLoggedIn: 'Zaloguj się aby w pełni korzystać z aplikacji',
+  logout: 'Wyloguj',
 };
