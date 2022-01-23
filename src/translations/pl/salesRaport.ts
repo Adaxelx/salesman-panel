@@ -11,7 +11,7 @@ export default {
     options: {
       today: 'Dziś',
       week: 'Obecny tydzień',
-      lastWeek: 'Poprzedni tydzień',
+      year: 'Obecny rok',
     },
   },
   selectChartType: {
@@ -26,5 +26,10 @@ export default {
     actualPeriod: 'Aktualny okres',
     previousPeriod: 'Poprzedni okres',
     notFinishedPeriod: 'Niezakończony okres',
+  },
+  chart: {
+    actual: 'Aktualny okres',
+    previous: 'Poprzedni okres',
+    notFinished: 'Niezakończony okres',
   },
 };

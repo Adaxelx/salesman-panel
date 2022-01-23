@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useQuery } from 'react-query';
 import { useUser } from 'context/UserContext';
 
 import { getSalesData } from 'api/salesRaport';
-import { SelectOption, Switch, Widget } from 'components';
+import useResizeObserver from 'hooks/useResizeObserver';
+import { Loader, SelectOption, Switch, Widget } from 'components';
 
+import BarChart from './BarChart';
 import SelectWithHeader from './SelectWithHeader';
 
-enum MeasureType {
+export enum MeasureType {
   sales = 'sales',
   count = 'count',
 }
-enum TimeRangeType {
+export enum TimeRangeType {
   today = 'today',
   week = 'week',
-  lasWeek = 'lastWeek',
+  year = 'year',
 }
 enum ChartType {
   bar = 'bar',
@@ -31,14 +33,23 @@ const SalesRaportWidget = () => {
   const {
     state: { activeShop },
   } = useUser();
-  console.log(activeShop);
+  const widget = useRef<HTMLDivElement | null>(null);
+  const [width] = useResizeObserver(widget);
 
-  const queryInfo = useQuery([activeShop], () =>
+  const queryInfo = useQuery([activeShop, measure, timeRange, previousPeriod], () =>
     getSalesData({ shopId: activeShop, query: { measure, timeRange, previousPeriod } })
   );
-  console.log(queryInfo?.data);
-  return (
+
+  if (queryInfo.isLoading || queryInfo.isIdle) {
     <Widget title={intl.formatMessage({ id: 'salesmanPanel.salesReport.title' })}>
+      <Loader />
+    </Widget>;
+  } else if (queryInfo.isError) {
+    return null;
+  }
+
+  return (
+    <Widget title={intl.formatMessage({ id: 'salesmanPanel.salesReport.title' })} ref={widget}>
       <div className="flex justify-between flex-wrap p-2">
         <SelectWithHeader
           value={measure}
@@ -79,6 +90,15 @@ const SalesRaportWidget = () => {
           </p>
           <Switch on={previousPeriod} toggle={() => setPreviousPeriod(previous => !previous)} />
         </div>
+      </div>
+      <div className="flex justify-center">
+        <BarChart
+          data={queryInfo.data}
+          width={width}
+          height={350}
+          timeRange={timeRange}
+          measure={measure}
+        />
       </div>
     </Widget>
   );
