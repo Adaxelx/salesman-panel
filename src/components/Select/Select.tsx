@@ -13,9 +13,9 @@ import styled from 'styled-components';
 import { ReactComponent as Arrow } from 'assets/caret-down-solid.svg';
 import { IconWrapper } from 'components';
 
-interface SelectProps {
+export interface SelectProps {
   value: string;
-  onChange: Dispatch<SetStateAction<string>>;
+  onChange: Dispatch<SetStateAction<any>>;
   children: ReactNode | ReactNode[];
 }
 
