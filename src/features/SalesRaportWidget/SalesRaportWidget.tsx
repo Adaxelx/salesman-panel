@@ -8,21 +8,9 @@ import useResizeObserver from 'hooks/useResizeObserver';
 import { Loader, SelectOption, Switch, Widget } from 'components';
 
 import BarChart from './BarChart';
+import LineChart from './LineChart';
 import SelectWithHeader from './SelectWithHeader';
-
-export enum MeasureType {
-  sales = 'sales',
-  count = 'count',
-}
-export enum TimeRangeType {
-  today = 'today',
-  week = 'week',
-  year = 'year',
-}
-enum ChartType {
-  bar = 'bar',
-  linear = 'linear',
-}
+import { ChartType, MeasureType, TimeRangeType } from './types';
 
 const SalesRaportWidget = () => {
   const intl = useIntl();
@@ -92,13 +80,23 @@ const SalesRaportWidget = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <BarChart
-          data={queryInfo.data}
-          width={width}
-          height={350}
-          timeRange={timeRange}
-          measure={measure}
-        />
+        {chartType === ChartType.bar ? (
+          <BarChart
+            data={queryInfo.data}
+            width={width}
+            height={350}
+            timeRange={timeRange}
+            measure={measure}
+          />
+        ) : (
+          <LineChart
+            data={queryInfo.data}
+            width={width}
+            height={350}
+            timeRange={timeRange}
+            measure={measure}
+          />
+        )}
       </div>
     </Widget>
   );

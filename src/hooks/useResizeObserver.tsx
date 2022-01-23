@@ -17,7 +17,7 @@ export default function useResizeObserver(elRef: any) {
     }
 
     return () => {
-      observer.current.unobserve(elRef.current);
+      elRef?.current && observer.current.unobserve(elRef.current);
     };
   }, [elRef, observer]);
 
