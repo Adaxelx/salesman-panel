@@ -3,6 +3,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { NavLink } from 'react-router-dom';
 import Portal from '@reach/portal';
 import { useUser } from 'context/UserContext';
+import styled from 'styled-components';
 
 import { LanguageType } from 'types';
 import { RoutesLinks } from 'types/router';
@@ -18,6 +19,13 @@ interface NavigationProps {
 }
 
 const flexColCenter = `flex flex-col justify-between items-center`;
+
+const NavList = styled.nav`
+  width: 300px;
+  @media (max-width: 300px) {
+    width: 100%;
+  }
+`;
 
 const navLinks = [
   { children: <FormattedMessage id="navigation.dashboard" />, to: RoutesLinks.Dashboard },
@@ -63,7 +71,7 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
             </div>
           </div>
           {isLoggedIn ? (
-            <div className={`flex flex-col pb-16`}>
+            <NavList className={`flex flex-col pb-16`}>
               {navLinks.map(props => (
                 <NavLink
                   {...props}
@@ -75,7 +83,7 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
                   }
                 />
               ))}
-            </div>
+            </NavList>
           ) : (
             <div className={`flex flex-col justify-center items-center h-screen pb-28`}>
               <h3 className="text-text-base">
