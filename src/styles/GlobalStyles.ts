@@ -5,7 +5,8 @@ export const GlobalStyle = createGlobalStyle`${css`
   body {
     --colors-white: #fcfcfc;
     --colors-grays-4: #c4c4c4;
-    --colors-red: #e74c3c;
+    --colors-red: #ff3939;
+    --colors-green: #00ab66;
   }
 
   body[data-theme='light'] {
