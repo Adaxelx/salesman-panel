@@ -1,4 +1,5 @@
 export default {
+  title: 'Raport obrotów',
   selectMeasure: {
     title: 'Miara',
     options: {

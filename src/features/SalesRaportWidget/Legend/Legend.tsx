@@ -6,7 +6,7 @@ const renderLegend = ({ payload }: { payload?: Payload[] }, isBar: boolean) => {
   return (
     <ul className={`flex flex-row justify-center flex-wrap`}>
       {payload?.map((entry, index) => (
-        <li key={`item-${index}`} className="mr-2 flex flex-row items-center">
+        <li key={`item-${index}`} className="mr-2 flex flex-row items-center text-text-base">
           <div
             className={`h-2 w-2 bg-${
               entry.value === 'actual' ? 'primary' : isBar ? 'tertiary' : 'secondary'
@@ -16,7 +16,7 @@ const renderLegend = ({ payload }: { payload?: Payload[] }, isBar: boolean) => {
         </li>
       ))}
       {isBar && (
-        <li className="mr-2 flex flex-row items-center">
+        <li className="mr-2 flex flex-row items-center text-text-base">
           <div className="h-2 w-2 bg-secondary rounded-full mr-1" />
           {<FormattedMessage id={`salesRaport.chart.notFinished`} />}
         </li>

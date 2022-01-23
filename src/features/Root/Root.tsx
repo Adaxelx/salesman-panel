@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from 'context/UserContext';
 import dayjs from 'dayjs';
@@ -64,6 +65,7 @@ function Root() {
           </BrowserRouter>
           <ToastContainer />
         </UserProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </IntlProvider>
   );

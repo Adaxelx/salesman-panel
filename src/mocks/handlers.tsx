@@ -22,6 +22,39 @@ const values2 = [
   { actual: 10 },
 ];
 
+const customersOpinions1 = [
+  { id: 1, user: 'user1', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 2,
+    user: 'user2',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 3,
+  },
+  { id: 3, user: 'user3', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  { id: 6, user: 'user1', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 4,
+    user: 'user2',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 3,
+  },
+  { id: 5, user: 'user3', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+];
+
+const customersOpinions2 = [
+  { id: 1, user: 'user3', description: 'Nic się nie zgadza z opisem.', rate: 2 },
+  {
+    id: 2,
+    user: 'user4',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue...',
+    rate: 5,
+  },
+  { id: 3, user: 'user5', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+];
+
 export const handlers = [
   // Handles a POST /login request
   rest.post('/login', (req, res, ctx) => {
@@ -54,12 +87,12 @@ export const handlers = [
       returnedValue = returnedValue.map((data, i) => ({ ...data, name: `${i + 10}-${i + 11}` }));
     } else if (timeRange === 'week') {
       returnedValue = returnedValue.map((data, i) => ({
-        actual: data.actual * Math.floor((Math.random() + 1) * 5) + 5,
+        actual: data.actual * 10,
         name: i,
       }));
     } else if (timeRange === 'year') {
       returnedValue = returnedValue.map((data, i) => ({
-        actual: data.actual * Math.floor((Math.random() + 1) * 20) + 10,
+        actual: data.actual * 32,
         name: i,
       }));
     }
@@ -70,5 +103,13 @@ export const handlers = [
       }));
     }
     return res(ctx.status(200), ctx.json(returnedValue));
+  }),
+  rest.get('/salesPanel/:shopId/customersOpinions', (req, res, ctx) => {
+    const { shopId } = req.params;
+
+    return res(
+      ctx.status(200),
+      ctx.json(shopId === 'S001' ? customersOpinions1 : customersOpinions2)
+    );
   }),
 ];

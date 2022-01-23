@@ -7,6 +7,8 @@ interface ButtonProps {
   children: ReactNode;
   type?: 'button' | 'submit';
   onClick?: () => void;
+  as?: ReactNode;
+  to?: string;
 }
 
 const getStyles = (variant: ButtonVariants) => {

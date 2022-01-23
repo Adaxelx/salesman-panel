@@ -75,7 +75,9 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
                   }}
                 >
                   {user?.shops.map(shop => (
-                    <SelectOption value={shop}>{shop}</SelectOption>
+                    <SelectOption key={shop} value={shop}>
+                      {shop}
+                    </SelectOption>
                   ))}
                 </Select>
               )}
@@ -85,6 +87,7 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
             <NavList className={`flex flex-col pb-16`}>
               {navLinks.map(props => (
                 <NavLink
+                  key={props.to}
                   {...props}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>

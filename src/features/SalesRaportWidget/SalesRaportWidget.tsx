@@ -2,15 +2,21 @@ import React, { useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useQuery } from 'react-query';
 import { useUser } from 'context/UserContext';
+import styled from 'styled-components';
 
-import { getSalesData } from 'api/salesRaport';
+import { getSalesData } from 'api/salesmanPanel';
 import useResizeObserver from 'hooks/useResizeObserver';
-import { Loader, SelectOption, Switch, Widget } from 'components';
+import { SelectOption, Switch, Widget } from 'components';
+import { Spinner } from 'components/Loader';
 
 import BarChart from './BarChart';
 import LineChart from './LineChart';
 import SelectWithHeader from './SelectWithHeader';
 import { ChartType, MeasureType, TimeRangeType } from './types';
+
+const StyledWrapper = styled.div`
+  height: 450px;
+`;
 
 const SalesRaportWidget = () => {
   const intl = useIntl();
@@ -28,16 +34,12 @@ const SalesRaportWidget = () => {
     getSalesData({ shopId: activeShop, query: { measure, timeRange, previousPeriod } })
   );
 
-  if (queryInfo.isLoading || queryInfo.isIdle) {
-    <Widget title={intl.formatMessage({ id: 'salesmanPanel.salesReport.title' })}>
-      <Loader />
-    </Widget>;
-  } else if (queryInfo.isError) {
+  if (queryInfo.isError) {
     return null;
   }
 
   return (
-    <Widget title={intl.formatMessage({ id: 'salesmanPanel.salesReport.title' })} ref={widget}>
+    <Widget title={intl.formatMessage({ id: 'salesRaport.title' })} ref={widget}>
       <div className="flex justify-between flex-wrap p-2">
         <SelectWithHeader
           value={measure}
@@ -45,7 +47,7 @@ const SalesRaportWidget = () => {
           header={intl.formatMessage({ id: 'salesRaport.selectMeasure.title' })}
         >
           {Object.values(MeasureType).map(value => (
-            <SelectOption value={value}>
+            <SelectOption key={value} value={value}>
               {intl.formatMessage({ id: `salesRaport.selectMeasure.options.${value}` })}
             </SelectOption>
           ))}
@@ -56,7 +58,7 @@ const SalesRaportWidget = () => {
           header={intl.formatMessage({ id: 'salesRaport.selectTime.title' })}
         >
           {Object.values(TimeRangeType).map(value => (
-            <SelectOption value={value}>
+            <SelectOption key={value} value={value}>
               {intl.formatMessage({ id: `salesRaport.selectTime.options.${value}` })}
             </SelectOption>
           ))}
@@ -67,7 +69,7 @@ const SalesRaportWidget = () => {
           header={intl.formatMessage({ id: 'salesRaport.selectChartType.title' })}
         >
           {Object.values(ChartType).map(value => (
-            <SelectOption value={value}>
+            <SelectOption key={value} value={value}>
               {intl.formatMessage({ id: `salesRaport.selectChartType.options.${value}` })}
             </SelectOption>
           ))}
@@ -79,12 +81,14 @@ const SalesRaportWidget = () => {
           <Switch on={previousPeriod} toggle={() => setPreviousPeriod(previous => !previous)} />
         </div>
       </div>
-      <div className="flex justify-center">
-        {chartType === ChartType.bar ? (
+      <StyledWrapper className="flex justify-center">
+        {queryInfo.isLoading ? (
+          <Spinner />
+        ) : chartType === ChartType.bar ? (
           <BarChart
             data={queryInfo.data}
             width={width}
-            height={350}
+            height={450}
             timeRange={timeRange}
             measure={measure}
           />
@@ -92,12 +96,12 @@ const SalesRaportWidget = () => {
           <LineChart
             data={queryInfo.data}
             width={width}
-            height={350}
+            height={450}
             timeRange={timeRange}
             measure={measure}
           />
         )}
-      </div>
+      </StyledWrapper>
     </Widget>
   );
 };

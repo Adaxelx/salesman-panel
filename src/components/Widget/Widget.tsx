@@ -1,4 +1,5 @@
 import React, { ForwardedRef, forwardRef, ReactNode } from 'react';
+import styled from 'styled-components';
 
 import { Title } from 'components';
 
@@ -9,13 +10,19 @@ interface WidgetProps {
   children: ReactNode;
 }
 
+const StyledWidget = styled.div`
+  @media (min-width: 768px) {
+    width: calc(50% - 16px);
+  }
+`;
+
 const Widget = forwardRef(
   (
     { title, actions, className = '', children }: WidgetProps,
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     return (
-      <div className={`${className} mb-8 w-full md:w-6/12 2xl:w-4/12`} ref={ref}>
+      <StyledWidget className={`${className} mb-8 w-full`} ref={ref}>
         <Title size="h2" color="primary" className="mb-2">
           {title}
         </Title>
@@ -31,7 +38,7 @@ const Widget = forwardRef(
             </div>
           ) : null}
         </section>
-      </div>
+      </StyledWidget>
     );
   }
 );

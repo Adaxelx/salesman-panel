@@ -21,6 +21,7 @@ module.exports = {
       base: {
         white: 'var(--colors-white)',
         red: 'var(--colors-red)',
+        green: 'var(--colors-green)',
         grays: {
           4: 'var(--colors-grays-4)',
         },
