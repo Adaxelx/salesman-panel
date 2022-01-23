@@ -6,4 +6,5 @@ export type UserCredentials = {
 export interface User {
   firstName: string;
   lastName: string;
+  shops: string[];
 }

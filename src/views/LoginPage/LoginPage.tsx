@@ -27,7 +27,8 @@ const LoginPage = () => {
     UserCredentials,
     unknown
   >((credentials: UserCredentials) => loginCall(credentials), {
-    onSuccess: ({ token, user }) => dispatch({ type: 'login', payload: { token, user } }),
+    onSuccess: ({ token, user }) =>
+      dispatch({ type: 'login', payload: { token, user, activeShop: user?.shops?.[0] } }),
     onError: error => {
       showToast(intl.formatMessage({ id: error?.message }), { type: 'error' });
     },

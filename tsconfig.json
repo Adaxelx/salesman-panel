@@ -17,6 +17,6 @@
     "jsx": "react-jsx",
     "baseUrl": "./src"
   },
-  "include": ["src/**/*.ts", "src/mocks/handlers.tsx"],
+  "include": ["src/**/*.ts", "src/mocks/handlers.tsx", "src/features/SalesRaportWidget/utils.tsx"],
   "exclude": ["node_modules"]
 }

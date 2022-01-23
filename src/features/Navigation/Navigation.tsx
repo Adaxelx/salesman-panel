@@ -42,9 +42,14 @@ const navLinks = [
 
 const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [shop, setShop] = useState('shop1');
-  const { isLoggedIn, dispatch } = useUser();
+  const {
+    state: { user, activeShop },
+    isLoggedIn,
+    dispatch,
+  } = useUser();
+
   const intl = useIntl();
+
   return (
     <>
       <HamburgerButton isOpen={isOpen} onClick={() => setIsOpen(prevIsOpen => !prevIsOpen)} />
@@ -63,9 +68,15 @@ const Navigation = ({ toggleLanguage, language }: NavigationProps) => {
             </div>
             <div className="flex w-full justify-center">
               {isLoggedIn && (
-                <Select value={shop} onChange={setShop}>
-                  <SelectOption value={'shop1'}>Shop1</SelectOption>
-                  <SelectOption value={'shop2'}>Shop2</SelectOption>
+                <Select
+                  value={activeShop || ''}
+                  onChange={value => {
+                    dispatch({ type: 'changeShop', payload: value });
+                  }}
+                >
+                  {user?.shops.map(shop => (
+                    <SelectOption value={shop}>{shop}</SelectOption>
+                  ))}
                 </Select>
               )}
             </div>
