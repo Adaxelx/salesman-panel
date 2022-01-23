@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
+import { useQuery } from 'react-query';
+import { useUser } from 'context/UserContext';
 
+import { getSalesData } from 'api/salesRaport';
 import { SelectOption, Switch, Widget } from 'components';
 
 import SelectWithHeader from './SelectWithHeader';
@@ -25,7 +28,15 @@ const SalesRaportWidget = () => {
   const [timeRange, setTimeRange] = useState<TimeRangeType>(TimeRangeType.today);
   const [chartType, setChartType] = useState<ChartType>(ChartType.bar);
   const [previousPeriod, setPreviousPeriod] = useState(false);
+  const {
+    state: { activeShop },
+  } = useUser();
+  console.log(activeShop);
 
+  const queryInfo = useQuery([activeShop], () =>
+    getSalesData({ shopId: activeShop, query: { measure, timeRange, previousPeriod } })
+  );
+  console.log(queryInfo?.data);
   return (
     <Widget title={intl.formatMessage({ id: 'salesmanPanel.salesReport.title' })}>
       <div className="flex justify-between flex-wrap p-2">
