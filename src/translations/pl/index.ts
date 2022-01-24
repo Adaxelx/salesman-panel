@@ -6,6 +6,7 @@ import ordersWidget from './ordersWidget';
 import pageTitles from './pageTitles';
 import salesAdvices from './salesAdvices';
 import salesmanPanel from './salesmanPanel';
+import salesQuality from './salesQuality';
 import salesRaport from './salesRaport';
 import shared from './shared';
 
@@ -15,6 +16,7 @@ export default {
   salesmanPanel,
   pageTitles,
   salesRaport,
+  salesQuality,
   shared,
   customersOpinions,
   offersRanking,

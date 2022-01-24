@@ -8,7 +8,7 @@ export interface AdviceProps {
 }
 
 const Advice = ({ content }: AdviceProps) => {
-  return <ItemWithBorder className="py-2 text-text-base">{content}</ItemWithBorder>;
+  return <ItemWithBorder className="text-text-base">{content}</ItemWithBorder>;
 };
 
 export default Advice;

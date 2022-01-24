@@ -27,3 +27,7 @@ export const getSalesAdvices = ({ shopId = '' }: SalesQueryProps) => {
 export const getOrders = ({ shopId = '' }: SalesQueryProps) => {
   return client(`salesPanel/${shopId}/orders`);
 };
+
+export const getSalesQuality = ({ shopId = '' }: SalesQueryProps) => {
+  return client(`salesPanel/${shopId}/salesQuality`);
+};

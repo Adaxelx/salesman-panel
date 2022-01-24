@@ -42,7 +42,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className={`${flexCenterAll} w-100 h-full`}>
+    <div className={`${flexCenterAll} w-5/6 h-full`}>
       <div className={`${classWrapper} mb-4`}>
         <div className={`${background} w-5/12  bg-tertiary  -translate-y-2`}></div>
         <Title className="mb-4 relative">{intl.formatMessage({ id: 'login.title' })}</Title>

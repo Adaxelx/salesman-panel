@@ -7,6 +7,7 @@ import CustomersOpinionsWidget from 'features/CustomersOpinionsWidget';
 import OffersRankingWidget from 'features/OffersRankingWidget';
 import OrdersWidget from 'features/OrdersWidget';
 import SalesAdvicesWidget from 'features/SalesAdvicesWidget';
+import SalesQualityWidget from 'features/SalesQualityWidget';
 import SalesRaportWidget from 'features/SalesRaportWidget';
 import { Page } from 'containers';
 
@@ -32,6 +33,7 @@ const SalesmanPanel = () => {
           <SalesAdvicesWidget />
           <OrdersWidget />
         </Wrapper>
+        <SalesQualityWidget />
       </div>
     </Page>
   );
