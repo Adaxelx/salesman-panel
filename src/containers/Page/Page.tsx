@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import styled from 'styled-components';
 
 import { Title } from 'components';
 
@@ -7,14 +8,22 @@ interface PageProps {
   title: string;
 }
 
+const StyledPage = styled.div`
+  @media (min-width: 1536px) {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 const Page = ({ children, title }: PageProps) => {
   return (
-    <div className="flex flex-col">
+    <StyledPage className="flex flex-col">
       <Title size="h1" className="mb-4">
         {title}
       </Title>
       {children}
-    </div>
+    </StyledPage>
   );
 };
 

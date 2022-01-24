@@ -18,7 +18,7 @@ export type OfferProps = {
 const Offer = ({ name, count, price, place }: OfferProps & WithPlace) => {
   const intl = useIntl();
   return (
-    <ItemWithBorder className="flex py-4 items-center justify-between w-100">
+    <ItemWithBorder className="flex items-center justify-between w-100">
       <div className="flex items-center text-text-base">
         <div className="w-4">{place}.</div>
         <div className="w-16 h-16 bg-primary mx-6" />

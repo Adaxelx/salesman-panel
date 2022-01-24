@@ -194,4 +194,27 @@ export const handlers = [
       ])
     );
   }),
+  rest.get('/salesPanel/:shopId/salesQuality', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        qualityGrade: 70,
+        qualityCategory: 5,
+        worstAspects: [
+          {
+            id: 1,
+            type: 'realization',
+          },
+          {
+            id: 2,
+            type: 'realization',
+          },
+          {
+            id: 3,
+            type: 'realization',
+          },
+        ],
+      })
+    );
+  }),
 ];

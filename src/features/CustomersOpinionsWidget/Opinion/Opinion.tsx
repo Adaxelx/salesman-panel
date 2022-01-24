@@ -11,7 +11,7 @@ export interface OpinionProps {
 
 const Opinion = ({ rate, user, description }: OpinionProps) => {
   return (
-    <ItemWithBorder className="py-2">
+    <ItemWithBorder>
       <div className="flex">
         <p className={`mr-3 text-base-${rate < 3 ? 'red' : 'green'} text-2xl`}>{`${rate}/5`}</p>
         <p className="font-bold text-text-base">{user}</p>
