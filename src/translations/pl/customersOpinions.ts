@@ -5,4 +5,7 @@ export default {
     positive: 'Pozytywne',
     negative: 'Negatywne',
   },
+  items: {
+    mouse: 'Myszka',
+  },
 };

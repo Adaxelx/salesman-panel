@@ -22,16 +22,16 @@ const Widget = forwardRef(
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     return (
-      <StyledWidget className={`${className} mb-8 w-full`} ref={ref}>
+      <StyledWidget className={`${className} mb-8 w-full flex flex-col`} ref={ref}>
         <Title size="h2" color="primary" className="mb-2">
           {title}
         </Title>
         <section
-          className={`border border-tertiary rounded-xl flex flex-col pt-2 ${
+          className={`border border-tertiary rounded-xl flex flex-col pt-2 flex-grow ${
             actions ? '' : 'pb-2'
           }`}
         >
-          {children}
+          <div className="flex-grow">{children}</div>
           {actions ? (
             <div className="flex justify-center w-100 py-2 border-t border-tertiary mt-2">
               {actions}

@@ -23,7 +23,13 @@ const values2 = [
 ];
 
 const customersOpinions1 = [
-  { id: 1, user: 'user1', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 1,
+    user: 'user1',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
   {
     id: 2,
     user: 'user2',
@@ -31,8 +37,20 @@ const customersOpinions1 = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
     rate: 3,
   },
-  { id: 3, user: 'user3', description: 'Nic się nie zgadza z opisem.', rate: 1 },
-  { id: 6, user: 'user1', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 3,
+    user: 'user3',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
+  {
+    id: 6,
+    user: 'user1',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
   {
     id: 4,
     user: 'user2',
@@ -40,7 +58,13 @@ const customersOpinions1 = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
     rate: 3,
   },
-  { id: 5, user: 'user3', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 5,
+    user: 'user3',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
 ];
 
 const customersOpinions2 = [
@@ -53,6 +77,22 @@ const customersOpinions2 = [
     rate: 5,
   },
   { id: 3, user: 'user5', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+];
+
+const offersRankingCommon = [
+  { id: 1, name: 'mouse', count: 22, price: 50 },
+  { id: 2, name: 'mouse', count: 12, price: 50 },
+  { id: 3, name: 'mouse', count: 8, price: 50 },
+  { id: 4, name: 'mouse', count: 7, price: 50 },
+  { id: 5, name: 'mouse', count: 6, price: 50 },
+];
+
+const offersRankingLeast = [
+  { id: 1, name: 'mouse', count: 1, price: 50 },
+  { id: 2, name: 'mouse', count: 2, price: 50 },
+  { id: 3, name: 'mouse', count: 3, price: 50 },
+  { id: 4, name: 'mouse', count: 4, price: 50 },
+  { id: 5, name: 'mouse', count: 5, price: 50 },
 ];
 
 export const handlers = [
@@ -110,6 +150,12 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.json(shopId === 'S001' ? customersOpinions1 : customersOpinions2)
+    );
+  }),
+  rest.get('/salesPanel/:shopId/offersRanking', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({ common: offersRankingCommon, least: offersRankingLeast })
     );
   }),
 ];
