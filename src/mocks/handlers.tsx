@@ -184,4 +184,14 @@ export const handlers = [
   rest.get('/salesPanel/:shopId/salesAdvices', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(salesAdvices));
   }),
+  rest.get('/salesPanel/:shopId/orders', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json([
+        { id: 1, type: 'unpaid', count: 3 },
+        { id: 2, type: 'notSend', count: 8 },
+        { id: 3, type: 'returns', count: 2 },
+      ])
+    );
+  }),
 ];

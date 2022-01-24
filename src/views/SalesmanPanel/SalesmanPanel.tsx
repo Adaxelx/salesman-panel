@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import CustomersOpinionsWidget from 'features/CustomersOpinionsWidget';
 import OffersRankingWidget from 'features/OffersRankingWidget';
+import OrdersWidget from 'features/OrdersWidget';
 import SalesAdvicesWidget from 'features/SalesAdvicesWidget';
 import SalesRaportWidget from 'features/SalesRaportWidget';
 import { Page } from 'containers';
@@ -29,6 +30,7 @@ const SalesmanPanel = () => {
         <OffersRankingWidget />
         <Wrapper className="flex flex-col">
           <SalesAdvicesWidget />
+          <OrdersWidget />
         </Wrapper>
       </div>
     </Page>
