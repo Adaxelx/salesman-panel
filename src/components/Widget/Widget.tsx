@@ -22,7 +22,7 @@ const Widget = forwardRef(
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     return (
-      <StyledWidget className={`${className} mb-8 w-full flex flex-col`} ref={ref}>
+      <StyledWidget className={`mb-8 w-full flex flex-col ${className}`} ref={ref}>
         <Title size="h2" color="primary" className="mb-2">
           {title}
         </Title>

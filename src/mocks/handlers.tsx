@@ -95,6 +95,29 @@ const offersRankingLeast = [
   { id: 5, name: 'mouse', count: 5, price: 50 },
 ];
 
+const salesAdvices = [
+  {
+    id: 1,
+    content:
+      'Aby zwiększyć sprzedaż warto jest zainwestować w reklamę własnej firmy oraz wybranych ofert.',
+  },
+  {
+    id: 2,
+    content:
+      'Social media to obecnie jeden z lepszych sposobów prowadzenia reklamy, warto zatrudnić specjalistę ds. social mediów.',
+  },
+  {
+    id: 3,
+    content:
+      'Przy spadku obrotu, zanim podejmie się drastyczne środki najlepiej jest wykonać analizę rynku i sprawdzić co spowodowało obecną sytuację.',
+  },
+  {
+    id: 4,
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim',
+  },
+];
+
 export const handlers = [
   // Handles a POST /login request
   rest.post('/login', (req, res, ctx) => {
@@ -157,5 +180,8 @@ export const handlers = [
       ctx.status(200),
       ctx.json({ common: offersRankingCommon, least: offersRankingLeast })
     );
+  }),
+  rest.get('/salesPanel/:shopId/salesAdvices', (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(salesAdvices));
   }),
 ];
