@@ -19,3 +19,7 @@ export const getCustomersOpinions = ({ shopId = '' }: SalesQueryProps) => {
 export const getOffersRanking = ({ shopId = '' }: SalesQueryProps) => {
   return client(`salesPanel/${shopId}/offersRanking`);
 };
+
+export const getSalesAdvices = ({ shopId = '' }: SalesQueryProps) => {
+  return client(`salesPanel/${shopId}/salesAdvices`);
+};

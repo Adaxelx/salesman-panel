@@ -15,7 +15,7 @@ import SelectWithHeader from './SelectWithHeader';
 import { ChartType, MeasureType, TimeRangeType } from './types';
 
 const StyledWrapper = styled.div`
-  height: 450px;
+  height: 500px;
 `;
 
 const SalesRaportWidget = () => {
@@ -40,7 +40,7 @@ const SalesRaportWidget = () => {
 
   return (
     <Widget title={intl.formatMessage({ id: 'salesRaport.title' })} ref={widget}>
-      <div className="flex justify-between flex-wrap p-2">
+      <div className="flex justify-between flex-wrap p-2 mb-2">
         <SelectWithHeader
           value={measure}
           onChange={setMeasure}
@@ -88,7 +88,7 @@ const SalesRaportWidget = () => {
           <BarChart
             data={queryInfo.data}
             width={width}
-            height={450}
+            height={500}
             timeRange={timeRange}
             measure={measure}
           />
