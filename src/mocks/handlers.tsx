@@ -23,7 +23,13 @@ const values2 = [
 ];
 
 const customersOpinions1 = [
-  { id: 1, user: 'user1', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 1,
+    user: 'user1',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
   {
     id: 2,
     user: 'user2',
@@ -31,8 +37,20 @@ const customersOpinions1 = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
     rate: 3,
   },
-  { id: 3, user: 'user3', description: 'Nic się nie zgadza z opisem.', rate: 1 },
-  { id: 6, user: 'user1', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 3,
+    user: 'user3',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
+  {
+    id: 6,
+    user: 'user1',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
   {
     id: 4,
     user: 'user2',
@@ -40,7 +58,13 @@ const customersOpinions1 = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
     rate: 3,
   },
-  { id: 5, user: 'user3', description: 'Nic się nie zgadza z opisem.', rate: 1 },
+  {
+    id: 5,
+    user: 'user3',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum ut dui consequat congue congue',
+    rate: 1,
+  },
 ];
 
 const customersOpinions2 = [

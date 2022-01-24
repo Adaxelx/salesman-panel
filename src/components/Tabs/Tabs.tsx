@@ -22,6 +22,7 @@ const StyledReachTabs = styled(ReachTabs)`
 
   [data-reach-tab] {
     color: var(--colors-text-base);
+    width: 100%;
   }
 `;
 
