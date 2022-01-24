@@ -79,6 +79,22 @@ const customersOpinions2 = [
   { id: 3, user: 'user5', description: 'Nic się nie zgadza z opisem.', rate: 1 },
 ];
 
+const offersRankingCommon = [
+  { id: 1, name: 'mouse', count: 22, price: 50 },
+  { id: 2, name: 'mouse', count: 12, price: 50 },
+  { id: 3, name: 'mouse', count: 8, price: 50 },
+  { id: 4, name: 'mouse', count: 7, price: 50 },
+  { id: 5, name: 'mouse', count: 6, price: 50 },
+];
+
+const offersRankingLeast = [
+  { id: 1, name: 'mouse', count: 1, price: 50 },
+  { id: 2, name: 'mouse', count: 2, price: 50 },
+  { id: 3, name: 'mouse', count: 3, price: 50 },
+  { id: 4, name: 'mouse', count: 4, price: 50 },
+  { id: 5, name: 'mouse', count: 5, price: 50 },
+];
+
 export const handlers = [
   // Handles a POST /login request
   rest.post('/login', (req, res, ctx) => {
@@ -134,6 +150,12 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.json(shopId === 'S001' ? customersOpinions1 : customersOpinions2)
+    );
+  }),
+  rest.get('/salesPanel/:shopId/offersRanking', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({ common: offersRankingCommon, least: offersRankingLeast })
     );
   }),
 ];

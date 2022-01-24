@@ -18,7 +18,7 @@ const CustomersOpinionsWidget = () => {
     state: { activeShop },
   } = useUser();
 
-  const queryInfo = useQuery<OpinionProps[]>([activeShop], () =>
+  const queryInfo = useQuery<OpinionProps[]>(['customersOpinions', activeShop], () =>
     getCustomersOpinions({ shopId: activeShop })
   );
 
