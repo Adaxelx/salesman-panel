@@ -8,6 +8,7 @@ interface WidgetProps {
   actions?: ReactNode | ReactNode[];
   className?: string;
   children: ReactNode;
+  withoutPadding?: boolean;
 }
 
 const StyledWidget = styled.div`
@@ -18,7 +19,7 @@ const StyledWidget = styled.div`
 
 const Widget = forwardRef(
   (
-    { title, actions, className = '', children }: WidgetProps,
+    { title, actions, className = '', children, withoutPadding = false }: WidgetProps,
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     return (
@@ -27,9 +28,9 @@ const Widget = forwardRef(
           {title}
         </Title>
         <section
-          className={`border border-tertiary rounded-xl flex flex-col pt-2 flex-grow ${
-            actions ? '' : 'pb-2'
-          }`}
+          className={`border border-tertiary rounded-xl flex flex-col ${
+            withoutPadding ? '' : 'pt-2'
+          } flex-grow ${actions || withoutPadding ? '' : 'pb-2'}`}
         >
           <div className="flex-grow">{children}</div>
           {actions ? (

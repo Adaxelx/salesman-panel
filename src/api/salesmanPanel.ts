@@ -23,3 +23,7 @@ export const getOffersRanking = ({ shopId = '' }: SalesQueryProps) => {
 export const getSalesAdvices = ({ shopId = '' }: SalesQueryProps) => {
   return client(`salesPanel/${shopId}/salesAdvices`);
 };
+
+export const getOrders = ({ shopId = '' }: SalesQueryProps) => {
+  return client(`salesPanel/${shopId}/orders`);
+};
