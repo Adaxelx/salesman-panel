@@ -54,7 +54,7 @@ const SalesQualityWidget = () => {
         </Link>
       }
     >
-      <div className="px-2">
+      <div className="px-2 text-text-base">
         <ItemWithBorder>
           <p className="text-text-base">{intl.formatMessage({ id: 'salesQuality.grade' })}</p>
           <div className="w-full h-6 bg-tertiary rounded relative">
