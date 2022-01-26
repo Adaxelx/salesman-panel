@@ -14,3 +14,7 @@ export const StyledLoader = styled.div`
   -webkit-animation: spinner 1.5s linear infinite;
   animation: ${spinner} 1.5s linear infinite;
 `;
+
+export const LoaderWrapper = styled.div`
+  height: calc(100vh - 4rem - 8px);
+`;

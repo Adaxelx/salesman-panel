@@ -2,7 +2,7 @@ import React from 'react';
 
 import { flexCenterAll } from 'styles/classes';
 
-import { StyledLoader } from './Loader.styled';
+import { LoaderWrapper, StyledLoader } from './Loader.styled';
 
 export const Spinner = () => (
   <div className={`${flexCenterAll} w-full h-full`}>
@@ -21,9 +21,9 @@ w-32
 
 const Loader = () => {
   return (
-    <div className={`w-screen h-screen bg-background`}>
+    <LoaderWrapper className={`w-screen bg-background`}>
       <Spinner />
-    </div>
+    </LoaderWrapper>
   );
 };
 

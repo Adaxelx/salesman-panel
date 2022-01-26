@@ -1,5 +1,5 @@
 export default {
-  title: 'Jakość sprzedazy',
+  title: 'Jakość sprzedaży',
   grade: 'Ocena jakości:',
   category: 'Kategoria jakości:',
   aspects: {

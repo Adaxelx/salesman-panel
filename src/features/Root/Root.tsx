@@ -50,8 +50,6 @@ function Root() {
     localStorage.setItem(languageKey, language);
   }, [language]);
 
-  console.log(language);
-
   return (
     <IntlProvider locale={language} messages={flattenMessages(messages[language])}>
       <QueryClientProvider client={queryClient}>
