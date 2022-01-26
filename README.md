@@ -4,6 +4,8 @@ Project made for GUI design classes.
 
 ## How to start the app
 
+### set .env REACT_APP_API_URL='http://localhost:3000' if missing
+
 1. Install node on your computer (I developed on v14.15.5)
 2. Clone repository (via ssh or http)
 3. Run: cd salesman-panel
