@@ -24,7 +24,7 @@ const OffersRankingWidget = () => {
 
   if (queryInfo.isLoading || queryInfo.isIdle) {
     return (
-      <Widget title={intl.formatMessage({ id: 'customersOpinions.title' })}>
+      <Widget title={intl.formatMessage({ id: 'offersRanking.title' })}>
         <Spinner />
       </Widget>
     );

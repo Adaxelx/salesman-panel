@@ -24,7 +24,7 @@ const OrdersWidget = () => {
 
   if (queryInfo.isLoading || queryInfo.isIdle) {
     return (
-      <FullWidthWidget title={intl.formatMessage({ id: 'customersOpinions.title' })}>
+      <FullWidthWidget title={intl.formatMessage({ id: 'ordersWidget.title' })}>
         <Spinner />
       </FullWidthWidget>
     );
@@ -36,7 +36,7 @@ const OrdersWidget = () => {
 
   return (
     <FullWidthWidget
-      title={intl.formatMessage({ id: 'offersRanking.title' })}
+      title={intl.formatMessage({ id: 'ordersWidget.title' })}
       className="flex-grow"
       withoutPadding
     >
