@@ -1,5 +1,5 @@
 export default {
-  daysOfWeek: ['Pon', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob', 'Nd'],
-  months: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip'],
-  pieces: '{value} szt.',
+  daysOfWeek: ['Mon', 'Tue', 'Wen', 'Thu', 'Fri', 'Sat', 'Sun'],
+  months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Juni', 'July'],
+  pieces: '{value} pc.',
 };

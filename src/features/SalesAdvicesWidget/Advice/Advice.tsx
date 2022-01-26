@@ -1,4 +1,5 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
 
 import { ItemWithBorder } from 'containers';
 
@@ -8,7 +9,12 @@ export interface AdviceProps {
 }
 
 const Advice = ({ content }: AdviceProps) => {
-  return <ItemWithBorder className="text-text-base">{content}</ItemWithBorder>;
+  const intl = useIntl();
+  return (
+    <ItemWithBorder className="text-text-base">
+      {intl.formatMessage({ id: `salesAdvices.advices.${content}` })}
+    </ItemWithBorder>
+  );
 };
 
 export default Advice;
