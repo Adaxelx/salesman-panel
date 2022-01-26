@@ -54,11 +54,14 @@ const SalesQualityWidget = () => {
         </Link>
       }
     >
-      <div className="px-2 text-text-base">
+      <div className="px-3 text-text-base">
         <ItemWithBorder>
           <p className="text-text-base">{intl.formatMessage({ id: 'salesQuality.grade' })}</p>
           <div className="w-full h-6 bg-tertiary rounded relative">
-            <div className="h-6 bg-primary rounded dark:bg-gray-300" style={{ width: '45%' }} />
+            <div
+              className="h-6 bg-primary rounded dark:bg-gray-300"
+              style={{ width: `${qualityGrade}%` }}
+            />
             <p className="absolute right-2 top-0">{`${qualityGrade}/100`}</p>
           </div>
         </ItemWithBorder>

@@ -55,12 +55,12 @@ const CustomersOpinionsWidget = () => {
         }
         panels={
           <>
-            <TabPanel className="px-2">
+            <TabPanel className="px-3">
               {opinions.slice(0, 5).map(data => (
                 <Opinion key={data.id} {...data} />
               ))}
             </TabPanel>
-            <TabPanel className="px-2">
+            <TabPanel className="px-3">
               {opinions
                 .filter(({ rate }) => rate >= 3)
                 .slice(0, 5)
@@ -68,7 +68,7 @@ const CustomersOpinionsWidget = () => {
                   <Opinion key={data.id} {...data} />
                 ))}
             </TabPanel>
-            <TabPanel className="px-2">
+            <TabPanel className="px-3">
               {opinions
                 .filter(({ rate }) => rate < 3)
                 .slice(0, 5)

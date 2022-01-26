@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const Order = ({ type, count }: OrderProps) => {
   const intl = useIntl();
   return (
-    <Wrapper className="flex-grow flex h-full flex-col items-center justify-center py-3">
+    <Wrapper className="flex-1 flex h-full flex-col items-center justify-center py-3">
       <p className="text-lg text-primary">
         {intl.formatMessage({ id: `ordersWidget.tab.${type}` })}
       </p>

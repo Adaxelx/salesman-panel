@@ -40,45 +40,49 @@ const SalesRaportWidget = () => {
 
   return (
     <Widget title={intl.formatMessage({ id: 'salesRaport.title' })} ref={widget}>
-      <div className="flex justify-between flex-wrap p-2 mb-2">
-        <SelectWithHeader
-          value={measure}
-          onChange={setMeasure}
-          header={intl.formatMessage({ id: 'salesRaport.selectMeasure.title' })}
-        >
-          {Object.values(MeasureType).map(value => (
-            <SelectOption key={value} value={value}>
-              {intl.formatMessage({ id: `salesRaport.selectMeasure.options.${value}` })}
-            </SelectOption>
-          ))}
-        </SelectWithHeader>
-        <SelectWithHeader
-          value={timeRange}
-          onChange={setTimeRange}
-          header={intl.formatMessage({ id: 'salesRaport.selectTime.title' })}
-        >
-          {Object.values(TimeRangeType).map(value => (
-            <SelectOption key={value} value={value}>
-              {intl.formatMessage({ id: `salesRaport.selectTime.options.${value}` })}
-            </SelectOption>
-          ))}
-        </SelectWithHeader>
-        <SelectWithHeader
-          value={chartType}
-          onChange={setChartType}
-          header={intl.formatMessage({ id: 'salesRaport.selectChartType.title' })}
-        >
-          {Object.values(ChartType).map(value => (
-            <SelectOption key={value} value={value}>
-              {intl.formatMessage({ id: `salesRaport.selectChartType.options.${value}` })}
-            </SelectOption>
-          ))}
-        </SelectWithHeader>
-        <div className="w-40">
-          <p className="text-primary">
-            {intl.formatMessage({ id: `salesRaport.legend.previousPeriod` })}
-          </p>
-          <Switch on={previousPeriod} toggle={() => setPreviousPeriod(previous => !previous)} />
+      <div className="flex justify-between flex-wrap p-3 mb-2 mb-3">
+        <div className="flex justify-between mr-2 flex-1">
+          <SelectWithHeader
+            value={measure}
+            onChange={setMeasure}
+            header={intl.formatMessage({ id: 'salesRaport.selectMeasure.title' })}
+          >
+            {Object.values(MeasureType).map(value => (
+              <SelectOption key={value} value={value}>
+                {intl.formatMessage({ id: `salesRaport.selectMeasure.options.${value}` })}
+              </SelectOption>
+            ))}
+          </SelectWithHeader>
+          <SelectWithHeader
+            value={timeRange}
+            onChange={setTimeRange}
+            header={intl.formatMessage({ id: 'salesRaport.selectTime.title' })}
+          >
+            {Object.values(TimeRangeType).map(value => (
+              <SelectOption key={value} value={value}>
+                {intl.formatMessage({ id: `salesRaport.selectTime.options.${value}` })}
+              </SelectOption>
+            ))}
+          </SelectWithHeader>
+        </div>
+        <div className="flex flex-1  mr-2 justify-between w-1/2">
+          <SelectWithHeader
+            value={chartType}
+            onChange={setChartType}
+            header={intl.formatMessage({ id: 'salesRaport.selectChartType.title' })}
+          >
+            {Object.values(ChartType).map(value => (
+              <SelectOption key={value} value={value}>
+                {intl.formatMessage({ id: `salesRaport.selectChartType.options.${value}` })}
+              </SelectOption>
+            ))}
+          </SelectWithHeader>
+          <div className="w-40">
+            <p className="text-primary">
+              {intl.formatMessage({ id: `salesRaport.legend.previousPeriod` })}
+            </p>
+            <Switch on={previousPeriod} toggle={() => setPreviousPeriod(previous => !previous)} />
+          </div>
         </div>
       </div>
       <StyledWrapper className="flex justify-center">

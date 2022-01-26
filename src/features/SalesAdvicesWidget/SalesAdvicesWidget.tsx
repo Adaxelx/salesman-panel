@@ -34,7 +34,7 @@ const SalesAdvicesWidget = () => {
 
   return (
     <FullWidthWidget title={intl.formatMessage({ id: 'salesAdvices.title' })}>
-      <div className="px-2">
+      <div className="px-3">
         {advices.map(advice => (
           <Advice key={advice.id} {...advice} />
         ))}

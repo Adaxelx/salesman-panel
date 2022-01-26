@@ -45,12 +45,12 @@ const OffersRankingWidget = () => {
         }
         panels={
           <>
-            <TabPanel className="px-2">
+            <TabPanel className="px-3">
               {common.map((offer, index) => (
                 <Offer key={offer.id} place={index + 1} {...offer} />
               ))}
             </TabPanel>
-            <TabPanel className="px-2">
+            <TabPanel className="px-3">
               {least.map((offer, index) => (
                 <Offer key={offer.id} place={index + 1} {...offer} />
               ))}

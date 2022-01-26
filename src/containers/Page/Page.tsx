@@ -9,6 +9,8 @@ interface PageProps {
 }
 
 const StyledPage = styled.div`
+  width: 100%;
+  min-height: 100vh;
   @media (min-width: 1536px) {
     width: 70%;
     display: flex;

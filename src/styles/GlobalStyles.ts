@@ -4,7 +4,9 @@ export const GlobalStyle = createGlobalStyle`${css`
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;800&display=swap');
   body {
     --colors-white: #fcfcfc;
-    --colors-grays-4: #c4c4c4;
+    --colors-black: black;
+    --colors-grays-4: #999999;
+    --colors-grays-6: #dedede;
     --colors-red: #ff3939;
     --colors-green: #00ab66;
   }

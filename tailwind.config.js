@@ -20,10 +20,12 @@ module.exports = {
       background: 'var(--colors-background)',
       base: {
         white: 'var(--colors-white)',
+        black: 'var(--colors-black)',
         red: 'var(--colors-red)',
         green: 'var(--colors-green)',
         grays: {
           4: 'var(--colors-grays-4)',
+          6: 'var(--colors-grays-6)',
         },
       },
     },
