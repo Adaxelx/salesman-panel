@@ -4,6 +4,12 @@ module.exports = {
   rules: {
     curly: 'error',
     'import/no-anonymous-default-export': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'no-unused-vars': ['error', { args: 'after-used' }],
     '@typescript-eslint/explicit-function-return-type': 0,
     'simple-import-sort/imports': [
