@@ -4,4 +4,7 @@ export default {
     common: 'Najczęściej kupowane',
     least: 'Najrzadziej kupowane',
   },
+  items: {
+    mouse: 'Myszka',
+  },
 };
